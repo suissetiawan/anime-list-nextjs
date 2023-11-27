@@ -3,10 +3,11 @@ import Link from "next/link";
 
 const AnimeCard = ({ id, title, image, episode, studio }) => {
   return (
-    <Link href={`/${id}`} className="cursor-pointer">
+    <Link href={`/anime/${id}`} className="cursor-pointer">
       <Card className="py-2" radius="sm">
         <CardBody>
           <Image
+            isZoomed
             alt="Card background"
             className="h-40 w-72 object-cover"
             radius="sm"

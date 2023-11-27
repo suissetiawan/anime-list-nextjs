@@ -1,13 +1,10 @@
-import AnimeList from "@/components/AnimeList";
-import SectionTitle from "@/components/General/SectionTitle";
+import AnimeList from "@/app/commons/components/AnimeList";
+import SectionTitle from "@/app/commons/components/General/SectionTitle";
+import { getAnimeResponse } from "@/app/commons/services/api_libs";
 
-const Page = async (value) => {
-  const { keyword } = value.params;
+const Page = async ({ params: { keyword } }) => {
   const resultKeyword = decodeURI(keyword);
-  const responses = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${resultKeyword}`
-  );
-  const searchAnime = await responses.json();
+  const searchAnime = await getAnimeResponse("anime", `q=${resultKeyword}`);
   return (
     <div className="flex min-h-screen flex-col p-6">
       <section className="flex flex-col gap-3">

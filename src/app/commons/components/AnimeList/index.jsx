@@ -18,8 +18,8 @@ const AnimeList = ({ api }) => {
               />
             );
           })
-        : arr.map(() => {
-            return <AnimeSkeleton />;
+        : arr.map((val) => {
+            return <AnimeSkeleton key={val} />;
           })}
     </div>
   );

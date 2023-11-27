@@ -1,6 +1,6 @@
 "use client";
 import { Input, Button } from "@nextui-org/react";
-import { SearchIcon } from "@/icons/myicons";
+import { SearchIcon } from "@/app/commons/icons/myicons";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 

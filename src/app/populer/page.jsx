@@ -1,9 +1,10 @@
 "use client";
 
-import AnimeList from "@/components/AnimeList";
-import SectionTitle from "@/components/General/SectionTitle";
-import Pagination from "@/components/General/Pagination";
+import AnimeList from "@/app/commons/components/AnimeList";
+import SectionTitle from "@/app/commons/components/General/SectionTitle";
+import Pagination from "@/app/commons/components/General/Pagination";
 import { useEffect, useState } from "react";
+import { getAnimeResponse } from "@/app/commons/services/api_libs";
 
 const Page = () => {
   const [page, setPage] = useState(1);
@@ -11,10 +12,7 @@ const Page = () => {
 
   const fetchData = async () => {
     setTopAnime([]);
-    const responses = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?page=${page}&limit=15`
-    );
-    const data = await responses.json();
+    const data = await getAnimeResponse("top/anime", `page=${page}&limit=15`);
     setTopAnime(data);
   };
 
