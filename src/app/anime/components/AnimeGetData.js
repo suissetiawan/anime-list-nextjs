@@ -1,3 +1,5 @@
+import FormattedDate from "@/app/commons/libraries/date_libs";
+
 const AnimeDatas = (anime) => {
   return [
     {
@@ -10,11 +12,7 @@ const AnimeDatas = (anime) => {
     },
     {
       key: "Realese Date",
-      value: new Date(anime.data.aired.from).toLocaleDateString("en-us", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }),
+      value: FormattedDate(anime.data.aired.from),
     },
     {
       key: "Episodes",

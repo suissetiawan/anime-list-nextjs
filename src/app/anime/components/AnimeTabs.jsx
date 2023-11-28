@@ -1,8 +1,9 @@
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import AnimeTrailer from "./AnimeTrailer";
 import AnimeInfo from "./AnimeInfo";
+import AnimeEpisodes from "./AnimeEpisodes";
 
-const AnimeTabs = ({ anime }) => {
+const AnimeTabs = ({ anime, episodes }) => {
   return (
     <div className="flex flex-col w-full gap-4">
       <Tabs size="lg" color="secondary" fullWidth={true} radius="sm">
@@ -10,16 +11,9 @@ const AnimeTabs = ({ anime }) => {
           <AnimeTrailer videoId={anime.data.trailer.youtube_id} />
         </Tab>
         <Tab key="episodes" title="Episodes">
-          <Card>
-            <CardBody>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </CardBody>
-          </Card>
+          <AnimeEpisodes episodes={episodes} />
         </Tab>
-        <Tab key="info" title="Information">
+        <Tab key="info" title="Details">
           <AnimeInfo anime={anime} />
         </Tab>
       </Tabs>

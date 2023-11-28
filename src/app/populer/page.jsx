@@ -1,10 +1,10 @@
 "use client";
 
 import AnimeList from "@/app/commons/components/AnimeList";
-import SectionTitle from "@/app/commons/components/General/SectionTitle";
-import Pagination from "@/app/commons/components/General/Pagination";
+import SectionTitle from "@/app/commons/components/SectionTitle";
+import Pagination from "@/app/commons/components/Pagination";
 import { useEffect, useState } from "react";
-import { getAnimeResponse } from "@/app/commons/services/api_libs";
+import { getAnimeResponse } from "@/app/commons/libraries/api_libs";
 
 const Page = () => {
   const [page, setPage] = useState(1);
@@ -21,7 +21,7 @@ const Page = () => {
   }, [page]);
 
   return (
-    <div className="flex min-h-screen flex-col p-6">
+    <div className="flex min-h-screen flex-col">
       <section className="flex flex-col gap-3">
         <SectionTitle isShowButton={false}>Most Popular</SectionTitle>
         <div className="flex flex-col items-center gap-10">

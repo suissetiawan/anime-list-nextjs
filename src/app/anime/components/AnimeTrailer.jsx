@@ -1,5 +1,5 @@
 import { Card, CardBody } from "@nextui-org/react";
-import SectionTitle from "@/app/commons/components/General/SectionTitle";
+import SectionTitle from "@/app/commons/components/SectionTitle";
 import YouTube from "react-youtube";
 
 const AnimeTrailer = ({ videoId }) => {

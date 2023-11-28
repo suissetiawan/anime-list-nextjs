@@ -9,8 +9,8 @@ const myStyles = {
 
 const AnimeDetails = ({ anime }) => {
   return (
-    <div className="flex gap-4">
-      <div className="basis-1/4">
+    <div className="flex flex-col md:flex-row  gap-4">
+      <div className="md:basis-1/4">
         <Image
           isZoomed
           className="w-full object-cover"
@@ -19,7 +19,7 @@ const AnimeDetails = ({ anime }) => {
           src={anime.data.images.webp.large_image_url}
         />
       </div>
-      <div className="basis-3/4 px-6 space-y-3">
+      <div className="md:basis-3/4 md:px-6 space-y-3">
         <p className="text-3xl font-extrabold mb-2">{anime.data.title}</p>
         <div className="flex items-center gap-2">
           <p className="text-2xl p-2 bg-zinc-800 rounded-md">
