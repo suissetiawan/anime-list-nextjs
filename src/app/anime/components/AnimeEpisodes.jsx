@@ -1,12 +1,6 @@
 import SectionTitle from "@/app/commons/components/SectionTitle";
-import FormattedDate from "@/app/commons/libraries/date_libs";
-import {
-  Listbox,
-  ListboxItem,
-  Card,
-  CardBody,
-  Avatar,
-} from "@nextui-org/react";
+import FormattedDate from "@/libraries/date_libs";
+import { Listbox, ListboxItem, Card, CardBody } from "@nextui-org/react";
 
 const AnimeEpisodes = ({ episodes }) => {
   return (

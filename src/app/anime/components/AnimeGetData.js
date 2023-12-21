@@ -1,4 +1,4 @@
-import FormattedDate from "@/app/commons/libraries/date_libs";
+import FormattedDate from "@/libraries/date_libs";
 
 const AnimeDatas = (anime) => {
   return [

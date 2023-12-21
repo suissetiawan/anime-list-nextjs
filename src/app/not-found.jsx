@@ -1,6 +1,6 @@
 "use client";
 import Lottie from "lottie-react";
-import NotFound from "./commons/icons/NotFound.json";
+import NotFound from "../icons/NotFound.json";
 
 const Page = () => {
   return (

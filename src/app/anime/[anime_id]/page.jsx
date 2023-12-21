@@ -1,6 +1,6 @@
 "use client";
 
-import { getAnimeResponse } from "@/app/commons/libraries/api_libs";
+import { getAnimeResponse } from "@/libraries/api_libs";
 import { useState, useEffect } from "react";
 import AnimeDetails from "../components/AnimeDetails";
 import AnimeTabs from "../components/AnimeTabs";
@@ -22,7 +22,6 @@ const Page = ({ params: { anime_id } }) => {
     fetchData();
   }, []);
 
-  console.log(episodes.data);
   return (
     <>
       {anime.length !== 0 && (

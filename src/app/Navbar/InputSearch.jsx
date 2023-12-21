@@ -1,6 +1,6 @@
 "use client";
 import { Input, Button } from "@nextui-org/react";
-import { SearchIcon } from "@/app/commons/icons/myicons";
+import { SearchIcon } from "@/icons/myicons";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 
@@ -10,7 +10,7 @@ const InputSearch = () => {
   const handleSearch = (e) => {
     const keyword = searchRef.current.value;
     if (e.key === "Enter" || e.type === "click") {
-      if (keyword !== "") {
+      if (keyword) {
         e.preventDefault();
         router.push(`/search/${keyword}`);
       } else {
@@ -28,13 +28,12 @@ const InputSearch = () => {
         inputWrapper: "bg-default-400/20 dark:bg-default-500/20",
       }}
       placeholder="Type to search..."
-      size="md"
+      size="sm"
       startContent={
         <Button
           isIconOnly
           color="secondary"
           variant="light"
-          enter
           onClick={handleSearch}>
           <SearchIcon />
         </Button>

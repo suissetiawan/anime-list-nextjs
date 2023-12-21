@@ -1,8 +1,7 @@
 "use client";
 import Lottie from "lottie-react";
-import Loading from "./commons/icons/LoadingAnimation.json";
-
-const Page = () => {
+import Loading from "../icons/LoadingAnimation.json";
+const LoadingPage = () => {
   return (
     <div className="min-h-full flex flex-col justify-center items-center">
       <Lottie animationData={Loading} />
@@ -13,4 +12,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default LoadingPage;

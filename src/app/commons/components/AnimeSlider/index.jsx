@@ -3,15 +3,29 @@
 import Slider from "react-slick";
 import AnimeCard from "../AnimeList/AnimeCard";
 import AnimeSkeleton from "../AnimeList/AnimeSkeleton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SettingSlider from "./SettingSlider";
 
 const AnimeSlider = ({ api }) => {
   const [slideValue, setslideValue] = useState(0);
   const arr = Array.from({ length: 5 }, (value, index) => index);
 
+  const alterAnime = {
+    data: [],
+  };
+
+  api.data.map((anime) => {
+    anime.studios = [];
+    anime.episodes = "";
+
+    let find = alterAnime.data.find((item) => item.mal_id === anime.mal_id);
+    if (!find) {
+      alterAnime.data.push(anime);
+    }
+  });
+
   const currentSlide = () => {
-    if (slideValue < 4) {
+    if (slideValue < Math.floor(alterAnime.data.length / 2)) {
       setslideValue(slideValue + 1);
     } else {
       setslideValue(0);
@@ -21,8 +35,8 @@ const AnimeSlider = ({ api }) => {
   return (
     <div className="p-3 md:px-3">
       <Slider beforeChange={currentSlide} {...SettingSlider(slideValue)}>
-        {api.data
-          ? api.data.map((anime) => {
+        {alterAnime.data
+          ? alterAnime.data.map((anime) => {
               return (
                 <div className="px-2">
                   <AnimeCard

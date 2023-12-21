@@ -18,9 +18,12 @@ const AnimeCard = ({ id, title, image, episode, studio }) => {
           <p className="line-clamp-1 text-medium uppercase font-bold">
             {title}
           </p>
-          <small className="line-clamp-1 text-default-500">
-            {episode} Episode | {studio}
-          </small>
+
+          {episode !== "" && (
+            <small className="line-clamp-1 text-default-500">
+              {episode ? episode : 0} Episode | {studio}
+            </small>
+          )}
         </CardFooter>
       </Card>
     </Link>

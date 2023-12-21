@@ -1,6 +1,7 @@
 import { Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 import Link from "next/link";
 import InputSearch from "./InputSearch";
+import LoginButton from "./loginButton";
 
 const NavbarApp = () => {
   return (
@@ -20,6 +21,7 @@ const NavbarApp = () => {
 
       <NavbarContent as="div" className="items-center" justify="end">
         <InputSearch />
+        <LoginButton />
       </NavbarContent>
     </Navbar>
   );
